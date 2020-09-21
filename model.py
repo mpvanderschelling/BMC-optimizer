@@ -91,6 +91,18 @@ def importconfig():
             print('[CONFIG]\t Load: %s = %s' %(line.split()[0],value))
 
 
+def importobjective():
+    global objective
+    objective = []
+    with open('objective.txt') as g:
+        for line in g:
+            if line[0] != '#':
+                objective.append(line)
+                print('[OBJECTIVE]\t Load: %s' %line.replace('\n',''))
+            
+        
+
+
 def ask():
     
     print("[HOME]\t Type '?' for a list of available commands")
@@ -198,6 +210,8 @@ def show_query(query):
             
             print("[SHOW]\t %s = %s"%(line.split()[0], str(globals()[line.split()[0]])))
         return
+    
+    
     
     if query.split()[1] == 'batch' and 'population' in globals():
         print('[SHOW]\t %s = %s' %('batch', str(globals()['population'])))
@@ -406,21 +420,46 @@ def chooseoutput():
         if 'd' not in globals():
             return
     
-    outputcolumns = list(data.columns)[-5:] 
+    # outputcolumns = list(data.columns)[-5:] 
+    
+    outputcolumns = list(data.columns)
+    for i in ['type fiber','type filler','fiber ratio','filler ratio','dry ratio','glycerol']:
+        outputcolumns.remove(i)
+    
     global fx
-    global fx_t
+    global output
+    obj = []
     
-    while True:
-        output = str(input("[SET OUTPUT]\t * Enter the name of the parameter to optimize: "))
-        if output in outputcolumns:
-            break
-        else:
-            print("[SET OUTPUT]\t %s column not present in the database!" %output)
-            print('[SET OUTPUT]\t Output columns in database: %s' %' - '.join(outputcolumns))
+    with open('objective.txt') as g:
+        for line in g:
+            if line[0] != '#':
+                obj.append(line)
 
-    fx = d[output].to_numpy().tolist()
-    fx_t = output
+    multi_obj = pd.Series(0,index=d.index)
+
+    for i in outputcolumns:
+        for j in obj:
+            if i in j:
+                obj_beh = j.replace(i,'').replace('\n','')[1:]
+                try:
+                    bias = converttype(obj_beh.split()[1])
+                except IndexError:
+                    bias = 1.0
+                sign = obj_beh.split()[0]
+                
+                if sign == 'min':
+                    multi_obj += ((d[i]-d[i].min())/(d[i].max()-d[i].min()))*bias
+                    
+                if sign == 'max':
+                    multi_obj += (abs(1-(d[i]-d[i].min())/(d[i].max()-d[i].min())))*bias
     
+    print('[SET OUTPUT]\t Made single-objective output by rules of objective.txt')
+    output = multi_obj
+    print('[SET OUTPUT]\t name \t\t score')
+    for i in range(len(output)):
+        print('[SET OUTPUT]\t %s \t %s' %(output.index[i],output[i]) )
+
+    fx = multi_obj.to_numpy().tolist()
 
 
 # #........... SET BATCH ....................
@@ -634,7 +673,11 @@ def printrecipes():
 
 startup()
 importconfig()
+importobjective()
 ask()
+
+
+
 
 
 

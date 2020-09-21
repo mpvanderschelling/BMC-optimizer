@@ -1,0 +1,5 @@
+density min 0.3
+stiffness max
+impact max 0.6
+flex. strength max 0.3
+E-modulus min 1
