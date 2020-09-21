@@ -24,6 +24,7 @@ The files in this repository
 
 ## Getting started
 The following guidelines will help you get started with using the optimization model.
+
 ### Linux command line
 <b>Step 1)</b> Clone the repository: `git clone https://github.com/mpvanderschelling/BMC-optimizer.git`<br>
 <b>Step 2)</b> Make sure you are using Python 3.6+ <br>
@@ -34,7 +35,16 @@ The following guidelines will help you get started with using the optimization m
 <b>Step 5)</b> Run the `model.py` python script: `python model.py`
 
 ### Windows
-Instructions for windows
+You need to have [Anaconda](https://www.anaconda.com/products/individual#windows) installed for this method.
+
+<b>Step 1)</b> Download the repository as `.zip` file. <br>
+> Click the green 'Code' button at the top of the window and then 'Download ZIP'
+
+<b>Step 2)</b> Unzip the file somewhere locally. <br>
+<b>Step 3)</b> Open Anaconda Prompt and navigate to the folder where the downloaded files are stored: `cd <path>` <br>
+<b>Step 4)</b> Type `pip install -r requirements_bmc.txt` to install the required packages <br>
+<b>Step 5)</b> Put a database excel file in the same folder <br>
+<b>Step 6)</b> Run the `model.py` python script: `python model.py`<br>
 
 ## Database file
 
@@ -54,7 +64,7 @@ density | impact | stiffness | flex. strength | E-modulus |
 1.4654| 2.3 | 9.5 | 32.1 | 5647 |
 ... | ... | ... | ... | ... |
 
-> Note: The composition of the matrix material should be the same over all the inputs
+> Note: The composition of the matrix material is hard-coded and should be the same over all the inputs.
 
 ## Configuration file
 The `config.txt` file contains the parameters you want to use in the model. For each line, specify the parameter, followed by a space and end with the value of that parameter. Lines proceding a `#` act as comments and will not be imported. <br>
@@ -83,9 +93,16 @@ author Martin van der Schelling
 You can alter the configuration file and save it locally to quickly load up custom parameters. A detailed description of the available parameters is found [here](#available-parameters).
 
 ## Objective file
+This model uses is a single-objective optimization method. However, by combining multiple output parameter to a single objective, more mechanical properties of the bio-based composite can be considered in the search.
 
-Something about the objective file
+For every output element, a normalized value relative to the best and worst properties of the fiber-natural filler combination is taken. The values are multiplied by an individual weight and added together to form a bio-based composite penalty 'score'. The objective is to find the recipe with the smallest penalty. <br>
 
+Every line in the `objective.txt` file starts with the output parameter (same as one of the columns in the database file). Lines preceding with a `#` are ignored.
+The second element is either `min` or `max`.
+* `min`: the requested parameter has to be minimized (e.g. density)
+* `max`: the requested parameter has to be maximized (e.g. flexural strength)
+
+Next, a weight is added. If no weight is given, the normalized value is multiplied by `1.0`. The final objective file looks something like this:
 ```
 density min 0.3
 stiffness max
@@ -93,6 +110,7 @@ impact max 0.6
 flex. strength max 0.3
 E-modulus min
 ```
+> Currently, it is not possible to edit the objective values within the program. They have to be altered and saved in the `objective.txt` file before running the model.
 
 ## Available commands
 
@@ -115,7 +133,7 @@ The commands are divided into 4 categories:
 `set now`			 set the variable now to the current time<br>
 `set data`		 import a database (`*.xlsx`) and set to variable data<br>
 `set materials`		specify the materials you want to investigate (fiber, natural filler)<br>
-`set output`		 specify what you want to optimize for<br>
+`set output`		 calculate the weighted single-objective penalty score for each selected BMC<br>
 `set batch`		 specify the amount of BMC doughs you want to make<br>
 `set <param> <value>`	 set the requested parameter to the requested value<br>
 
@@ -137,7 +155,7 @@ The following parameters can be used by `set` and `show`
 
 name	|	type	|	description
 ---|---|---
-`acq_func`	|string	|	Type of acquisition function used
+`acq_func`	|string	|	Type of acquisition function used. [More info](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer)
 `author`		|string|		Name that will be printed on the recipes
 `batch`     | int |     Number of recipes to be generated
 `config`		|list|		Copy of the imported config.txt file
@@ -153,5 +171,9 @@ name	|	type	|	description
 `filler_t`	|string	|	Name of the natural filler to investigate
 `max_recipes`	|int	|	Maximum number of recipes to request
 `now`		|datetime|	Current time at start of program
-`strategy`	|str|		Parallel Bayesian Optimization strategy
+`output` |Series| Calculated penalty score of each selected entry in the database
+`strategy`	|str|		Parallel Bayesian Optimization strategy. [More info](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer)
 `total_mass`	|float|		Total mass of each BMC dough
+
+
+*Made by [Martin van der Schelling](https://mpvanderschelling.github.io/)*
