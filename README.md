@@ -78,30 +78,32 @@ You can alter the configuration file and save it locally to quickly load up cust
 
 ## Available commands
 
+The commands are divided into 4 categories: `show` for showing parameters and data on the screen, `set` for setting parameters to a certain value, `ask` for asking the surrogate model for proposed recipes and `print` for writing the config parameters to a file or exporting the suggested recipes.
+
 **SHOW**<br>
-`show` 			| show the config parameters<br>
-`show config`		| show the config parameters<br>
-`show data`	| show the entire database<br>
-`show <param>`		| show the requested parameter<br>
+`show` 			 show the config parameters<br>
+`show config`		 show the config parameters<br>
+`show data`	 show the entire database<br>
+`show <param>`		 show the requested parameter<br>
 
 **SET**<br>
-`set config`		:: import the config parameters from the config file again<br>
-`set now`			:: set the variable now to the current time<br>
-`set data`		:: import a database and set to variable data<br>
-`set materials`		:: specify the materials you want to investigate (fiber, filler)<br>
-`set output`		:: specify what you want to optimize for<br>
-`set batch`		:: specify the amount of BMC doughs you want to make<br>
-`set <param> <value>`	:: set the requested parameter to the requested value<br>
+`set config`		 import the config parameters from the config file again<br>
+`set now`			 set the variable now to the current time<br>
+`set data`		 import a database and set to variable data<br>
+`set materials`		specify the materials you want to investigate (fiber, filler)<br>
+`set output`		 specify what you want to optimize for<br>
+`set batch`		 specify the amount of BMC doughs you want to make<br>
+`set <param> <value>`	 set the requested parameter to the requested value<br>
 
 **ASK**<br>
-`ask model`		:: ask the optimization model for new recipes<br>
+`ask model`		 ask the optimization model for new recipes<br>
 
 **PRINT**<br>
-`print config`		:: save the altered config parameters to the config.txt file<br>
-`print model`		:: print the suggested recipes to a .csv file<br>
+`print config`		 save the altered config parameters to the config.txt file<br>
+`print model`		 print the suggested recipes to a .csv file<br>
 
 **MISC**<br>
-`help/?`			:: show the available commands<br>
-`exit`			:: exit program<br>
+`help/?`			 show the available commands<br>
+`exit`			 exit program<br>
 
 
