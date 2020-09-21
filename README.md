@@ -15,6 +15,7 @@ The following guidelines will help you get started with using the optimization m
 <b>Step 2)</b> Make sure you are using Python 3.6+ <br>
 <b>Step 3)</b> Install the required packages: `pip install -r requirements_bmc.txt` <br>
 > Alternatively, you can install the required packages yourself: `scikit-optimize, pandas, datetime, xlrd.`
+
 <b>Step 4)</b> Put a database excel file in the local folder <br>
 <b>Step 5)</b> Run the `model.py` python script: `python model.py`
 
