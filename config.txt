@@ -1,18 +1,17 @@
-# dit is een testcomment
+# search space boundaries
 fiber_lb 0.05
-fiber_ub 0.1
-
-#dit ook trouwens
+fiber_ub 0.25
 filler_lb 0.0
 filler_ub 1.0
-
 dry_lb 0.4
 dry_ub 0.75
 
+# Optimization model parameters
 acq_func EI
 strategy cl_min
 
+# Recipe parameters
 max_recipes 6
 total_mass 2800.0
-author Jaap Wie
 
+author Martin van der Schelling

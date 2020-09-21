@@ -2,9 +2,11 @@
 Simple Bayesian Optimization python program to suggest new bulk moulding compound recipes for bio-based composites.
 This program is designed in collaboration with NPSP B.V.
 
-## Introduction
-
-
+## Contents
+<b>bmc_requirements.txt</b>: Pip requirements file. No need to change this.<br>
+<b>config.txt</b>: Configuration file with model paramaters. Parameters are loaded up at the start of the program.<br>
+<b>help.txt</b>: File for which the contents are displayed if you are executing `help` within the python program.<br>
+<b>model.py</b>: The python model to execute.<br>
 
 ## Getting started
 The following guidelines will help you get started with using the optimization model.
@@ -18,5 +20,33 @@ The following guidelines will help you get started with using the optimization m
 ### Windows
 Instructions for windows
 
-## 
+## Database file
+
+name | type fiber | type filler | fiber ratio | filler ratio | dry ratio | 
+--- | --- | --- | --- | --- | --- |
+FlaxOli50 | Flax | Olive stone | 0.0995 | 0.1542 | 0.6532 |
+
+## Configuration file
+
+```
+# search space boundaries
+fiber_lb 0.05
+fiber_ub 0.25
+filler_lb 0.0
+filler_ub 1.0
+dry_lb 0.4
+dry_ub 0.75
+
+# Optimization model parameters
+acq_func EI
+strategy cl_min
+
+# Recipe parameters
+max_recipes 6
+total_mass 2800.0
+
+author Martin van der Schelling
+```
+
+
 
