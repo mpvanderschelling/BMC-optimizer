@@ -2,11 +2,21 @@
 Simple Bayesian Optimization python program to suggest new bulk moulding compound recipes for bio-based composites.
 This program is designed in collaboration with NPSP B.V.
 
-## Contents
-<b>bmc_requirements.txt</b>: Pip requirements file. No need to change this.<br>
-<b>config.txt</b>: Configuration file with model paramaters. Parameters are loaded up at the start of the program.<br>
-<b>help.txt</b>: File for which the contents are displayed if you are executing `help` within the python program.<br>
-<b>model.py</b>: The python model to execute.<br>
+## Overview
+
+This python scripts first builds a Gaussian process surrogate model given the data provided. Subsequently, several new recipes are proposed within the search space boundaries.
+Contents of this readme:
+* Files
+* Getting started
+* Database file
+* Configuration file
+* Available commands
+
+The files in this repository
+* <b>bmc_requirements.txt</b>: Pip requirements file. No need to change this.<br>
+* <b>config.txt</b>: Configuration file with model paramaters. Parameters are loaded up at the start of the program.<br>
+* <b>help.txt</b>: File for which the contents are displayed if you are executing `help` within the python program.<br>
+* <b>model.py</b>: The python model to execute.<br>
 
 ## Getting started
 The following guidelines will help you get started with using the optimization model.
@@ -24,8 +34,7 @@ Instructions for windows
 
 ## Database file
 
-The database file consists of some necessary input paramaeter columns <br>
-Each row contains a new sample.
+You have to provide your own database file. The database file consists of some necessary input paramaeter columns. Each row contains a new sample.
 
 name | type fiber | type filler | fiber ratio | filler ratio | dry ratio | 
 --- | --- | --- | --- | --- | --- |
@@ -38,6 +47,8 @@ Other columns are selected as output columns
 density | impact | stiffness | flex. strength | E-modulus |
 --- | --- | --- | --- | --- |
 1.7187 | 2.1 | 9.7 | 28.8 | 4770 |
+1.4654| 2.3 | 9.5 | 32.1 | 5647 |
+... | ... | ... | ... | ... |
 
 ## Configuration file
 The `config.txt` file contains the parameters you want to use in the model <br>
@@ -65,4 +76,4 @@ author Martin van der Schelling
 
 You can alter the configuration file and save it locally to quickly load up custom parameters
 
-
+## Available commands
