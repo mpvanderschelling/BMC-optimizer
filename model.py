@@ -197,7 +197,11 @@ def show_query(query):
                 continue
             
             print("[SHOW]\t %s = %s"%(line.split()[0], str(globals()[line.split()[0]])))
-            
+        return
+    
+    if query.split()[1] == 'batch' and 'population' in globals():
+        print('[SHOW]\t %s = %s' %('batch', str(globals()['population'])))
+        return
         
     elif query.split()[1] in globals():
         param = query.split()[1]

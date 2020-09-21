@@ -33,6 +33,7 @@
 	
 	acq_func	string		Type of acquisition function used
 	author		string		Name that will be printed on the recipes
+	batch     	int		Number of recipes to be generated
 	config		list		Copy of the imported config.txt file
 	data		DataFrame	Imported BMC database
 	databasename	string		Filename of the imported database

@@ -115,22 +115,26 @@ The commands are divided into 4 categories:
 
 ## Available parameters
 
+The following parameters can be used by `set` and `show`
+> Setting `fiber_t` and `filler_t` is more convenient by calling `set materials`
+
 name	|	type	|	description
 ---|---|---
-acq_func	|string	|	Type of acquisition function used
-author		|string|		Name that will be printed on the recipes
-config		|list|		Copy of the imported config.txt file
-data		|DataFrame|	Imported BMC database
-databasename	|string|		Filename of the imported database
-dry_lb		|float	|	Lower bound of the dry materials parameter
-dry_ub		|float	|	Upper bound of the dry materials parameter
-fiber_lb	|float	|	Lower bound of the fiber parameter
-fiber_ub	|float	|	Upper bound of the fiber parameter
-fiber_t		|string	|	Name of the fiber to investigate
-filler_lb	|float	|	Lower bound of the natural filler parameter
-filler_ub	|float	|	Upper bound of the natural filler parameter	
-filler_t	|string	|	Name of the natural filler to investigate
-max_recipes	|int	|	Maximum number of recipes to request
-now		|datetime|	Current time at start of program
-strategy	|str|		Parallel Bayesian Optimization strategy
-total_mass	|float|		Total mass of each BMC dough
+`acq_func`	|string	|	Type of acquisition function used
+`author`		|string|		Name that will be printed on the recipes
+`batch`     | int |     Number of recipes to be generated
+`config`		|list|		Copy of the imported config.txt file
+`data`		|DataFrame|	Imported BMC database
+`databasename`	|string|		Filename of the imported database
+`dry_lb`		|float	|	Lower bound of the dry materials parameter
+`dry_ub`		|float	|	Upper bound of the dry materials parameter
+`fiber_lb`	|float	|	Lower bound of the fiber parameter
+`fiber_ub`	|float	|	Upper bound of the fiber parameter
+`fiber_t`		|string	|	Name of the fiber to investigate
+`filler_lb`	|float	|	Lower bound of the natural filler parameter
+`filler_ub`	|float	|	Upper bound of the natural filler parameter	
+`filler_t`	|string	|	Name of the natural filler to investigate
+`max_recipes`	|int	|	Maximum number of recipes to request
+`now`		|datetime|	Current time at start of program
+`strategy`	|str|		Parallel Bayesian Optimization strategy
+`total_mass`	|float|		Total mass of each BMC dough
