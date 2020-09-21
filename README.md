@@ -50,6 +50,8 @@ You need to have [Anaconda](https://www.anaconda.com/products/individual#windows
 
 You have to provide your own database file. The database file consists of some necessary input paramaeter columns. Each row contains a new sample.
 
+> The database file `input_fake.xlsx` is artificially generated data to serve as a placeholder. This data should not be used for experiments
+
 name | type fiber | type filler | fiber ratio | filler ratio | dry ratio | 
 --- | --- | --- | --- | --- | --- |
 FlaxOli50 | Flax | Olive stone | 0.0995 | 0.1542 | 0.6532 |
