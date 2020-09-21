@@ -6,12 +6,12 @@ This program is designed in collaboration with NPSP B.V.
 
 This python scripts first builds a Gaussian process surrogate model given the data provided. Subsequently, several new recipes are proposed within the search space boundaries.
 Contents of this readme:
-* Files
-* Getting started
-* Database file
-* Configuration file
+* [Files](#files)
+* [Getting started](#getting-started)
+* [Database file](#database-file)
+* [Configuration file](#configuration-file)
 * [Available commands](#available-commands)
-* Available parameters
+* [Available parameters](#available-parameters)
 
 The files in this repository
 * <b>bmc_requirements.txt</b>: Pip requirements file. No need to change this.<br>
@@ -115,22 +115,22 @@ The commands are divided into 4 categories:
 
 ## Available parameters
 
-|name	|	type	|	description
-
-acq_func	string		Type of acquisition function used
-author		string		Name that will be printed on the recipes
-config		list		Copy of the imported config.txt file
-data		DataFrame	Imported BMC database
-databasename	string		Filename of the imported database
-dry_lb		float		Lower bound of the dry materials parameter
-dry_ub		float		Upper bound of the dry materials parameter
-fiber_lb	float		Lower bound of the fiber parameter
-fiber_ub	float		Upper bound of the fiber parameter
-fiber_t		string		Name of the fiber to investigate
-filler_lb	float		Lower bound of the natural filler parameter
-filler_ub	float		Upper bound of the natural filler parameter	
-filler_t	string		Name of the natural filler to investigate
-max_recipes	int		Maximum number of recipes to request
-now		datetime	Current time at start of program
-strategy	str		Parallel Bayesian Optimization strategy
-total_mass	float		Total mass of each BMC dough
+name	|	type	|	description
+---|---|---
+acq_func	|string	|	Type of acquisition function used
+author		|string|		Name that will be printed on the recipes
+config		|list|		Copy of the imported config.txt file
+data		|DataFrame|	Imported BMC database
+databasename	|string|		Filename of the imported database
+dry_lb		|float	|	Lower bound of the dry materials parameter
+dry_ub		|float	|	Upper bound of the dry materials parameter
+fiber_lb	|float	|	Lower bound of the fiber parameter
+fiber_ub	|float	|	Upper bound of the fiber parameter
+fiber_t		|string	|	Name of the fiber to investigate
+filler_lb	|float	|	Lower bound of the natural filler parameter
+filler_ub	|float	|	Upper bound of the natural filler parameter	
+filler_t	|string	|	Name of the natural filler to investigate
+max_recipes	|int	|	Maximum number of recipes to request
+now		|datetime|	Current time at start of program
+strategy	|str|		Parallel Bayesian Optimization strategy
+total_mass	|float|		Total mass of each BMC dough
