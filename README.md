@@ -24,6 +24,7 @@ Instructions for windows
 
 The database file consists of some necessary input paramaeter columns <br>
 Each row contains a new sample.
+
 name | type fiber | type filler | fiber ratio | filler ratio | dry ratio | 
 --- | --- | --- | --- | --- | --- |
 FlaxOli50 | Flax | Olive stone | 0.0995 | 0.1542 | 0.6532 |
@@ -31,7 +32,7 @@ FlaxOli50 | Flax | Olive stone | 0.0995 | 0.1542 | 0.6532 |
 Other columns are selected as output columns
 
 density | impact | stiffness | flex. strength | E-modulus |
---- | --- | --- | --- | --- | --- |
+--- | --- | --- | --- | --- |
 1.7187 | 2.1 | 9.7 | 28.8 | 4770 |
 
 ## Configuration file
