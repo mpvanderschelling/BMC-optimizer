@@ -10,7 +10,8 @@ Contents of this readme:
 * Getting started
 * Database file
 * Configuration file
-* Available commands
+* [Available commands](#available-commands)
+* Available parameters
 
 The files in this repository
 * <b>bmc_requirements.txt</b>: Pip requirements file. No need to change this.<br>
@@ -78,19 +79,25 @@ You can alter the configuration file and save it locally to quickly load up cust
 
 ## Available commands
 
-The commands are divided into 4 categories: `show` for showing parameters and data on the screen, `set` for setting parameters to a certain value, `ask` for asking the surrogate model for proposed recipes and `print` for writing the config parameters to a file or exporting the suggested recipes.
+The commands are divided into 4 categories: 
+* `show` for showing parameters and data on the screen. 
+* `set` for setting parameters to a certain value.
+* `ask` for asking the surrogate model for proposed recipes.
+* `print` for writing the config parameters to a file or exporting the suggested recipes.
 
 **SHOW**<br>
 `show` 			 show the config parameters<br>
 `show config`		 show the config parameters<br>
-`show data`	 show the entire database<br>
+`show data`	 show the entire database. If no data is important, it will ask to `set data`.<br>
 `show <param>`		 show the requested parameter<br>
 
 **SET**<br>
 `set config`		 import the config parameters from the config file again<br>
+> Warning: this neglects any changes of config parameters during the current session
+
 `set now`			 set the variable now to the current time<br>
-`set data`		 import a database and set to variable data<br>
-`set materials`		specify the materials you want to investigate (fiber, filler)<br>
+`set data`		 import a database (`*.xlsx`) and set to variable data<br>
+`set materials`		specify the materials you want to investigate (fiber, natural filler)<br>
 `set output`		 specify what you want to optimize for<br>
 `set batch`		 specify the amount of BMC doughs you want to make<br>
 `set <param> <value>`	 set the requested parameter to the requested value<br>
@@ -100,10 +107,30 @@ The commands are divided into 4 categories: `show` for showing parameters and da
 
 **PRINT**<br>
 `print config`		 save the altered config parameters to the config.txt file<br>
-`print model`		 print the suggested recipes to a .csv file<br>
+`print model`		 print the suggested recipes to a `.csv` file<br>
 
 **MISC**<br>
 `help/?`			 show the available commands<br>
 `exit`			 exit program<br>
 
+## Available parameters
 
+|name	|	type	|	description
+
+acq_func	string		Type of acquisition function used
+author		string		Name that will be printed on the recipes
+config		list		Copy of the imported config.txt file
+data		DataFrame	Imported BMC database
+databasename	string		Filename of the imported database
+dry_lb		float		Lower bound of the dry materials parameter
+dry_ub		float		Upper bound of the dry materials parameter
+fiber_lb	float		Lower bound of the fiber parameter
+fiber_ub	float		Upper bound of the fiber parameter
+fiber_t		string		Name of the fiber to investigate
+filler_lb	float		Lower bound of the natural filler parameter
+filler_ub	float		Upper bound of the natural filler parameter	
+filler_t	string		Name of the natural filler to investigate
+max_recipes	int		Maximum number of recipes to request
+now		datetime	Current time at start of program
+strategy	str		Parallel Bayesian Optimization strategy
+total_mass	float		Total mass of each BMC dough
