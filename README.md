@@ -22,12 +22,22 @@ Instructions for windows
 
 ## Database file
 
+The database file consists of some necessary input paramaeter columns <br>
+Each row contains a new sample.
 name | type fiber | type filler | fiber ratio | filler ratio | dry ratio | 
 --- | --- | --- | --- | --- | --- |
 FlaxOli50 | Flax | Olive stone | 0.0995 | 0.1542 | 0.6532 |
 
-## Configuration file
+Other columns are selected as output columns
 
+density | impact | stiffness | flex. strength | E-modulus |
+--- | --- | --- | --- | --- | --- |
+1.7187 | 2.1 | 9.7 | 28.8 | 4770 |
+
+## Configuration file
+The `config.txt` file contains the parameters you want to use in the model <br>
+For each line, specify the parameter, followed by a space and end with the value of that parameter
+For more information on the optimization model parameters, consult the [cikit-optimize documentation](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer).
 ```
 # search space boundaries
 fiber_lb 0.05
