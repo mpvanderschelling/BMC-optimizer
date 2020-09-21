@@ -77,3 +77,31 @@ author Martin van der Schelling
 You can alter the configuration file and save it locally to quickly load up custom parameters
 
 ## Available commands
+
+*SHOW*
+`show` 			:: show the config parameters
+`show config`		:: show the config parameters
+`show data`	:: show the entire database
+`show <param>`		:: show the requested parameter
+
+*SET*
+`set config`		:: import the config parameters from the config file again
+`set now`			:: set the variable now to the current time
+`set data`		:: import a database and set to variable data
+`set materials`		:: specify the materials you want to investigate (fiber, filler)
+`set output`		:: specify what you want to optimize for
+`set batch`		:: specify the amount of BMC doughs you want to make
+`set <param> <value>`	:: set the requested parameter to the requested value
+
+*ASK*
+`ask model`		:: ask the optimization model for new recipes
+
+*PRINT*
+`print config`		:: save the altered config parameters to the config.txt file
+`print model`		:: print the suggested recipes to a .csv file
+
+*MISC*
+`help/?`			:: show the available commands
+`exit`			:: exit program
+
+
