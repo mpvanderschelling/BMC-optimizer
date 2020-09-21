@@ -11,6 +11,7 @@ Contents of this readme:
 * [Getting started](#getting-started)
 * [Database file](#database-file)
 * [Configuration file](#configuration-file)
+* [Objective file](#objective-file)
 * [Available commands](#available-commands)
 * [Available parameters](#available-parameters)
 
@@ -19,6 +20,7 @@ The files in this repository
 * <b>config.txt</b>: Configuration file with model paramaters. Parameters are loaded up at the start of the program.<br>
 * <b>help.txt</b>: File for which the contents are displayed if you are executing `help` within the python program.<br>
 * <b>model.py</b>: The python model to execute.<br>
+* <b>objective.txt</b>: File that states the different objectives, their weights and if they are to be minimized or maximized
 
 ## Getting started
 The following guidelines will help you get started with using the optimization model.
@@ -55,9 +57,9 @@ density | impact | stiffness | flex. strength | E-modulus |
 > Note: The composition of the matrix material should be the same over all the inputs
 
 ## Configuration file
-The `config.txt` file contains the parameters you want to use in the model <br>
-For each line, specify the parameter, followed by a space and end with the value of that parameter <br>
-For more information on the optimization model parameters, consult the [scikit-optimize documentation](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer).
+The `config.txt` file contains the parameters you want to use in the model. For each line, specify the parameter, followed by a space and end with the value of that parameter. Lines proceding a `#` act as comments and will not be imported. <br>
+> For more information on the optimization model parameters, consult the [scikit-optimize documentation](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer).
+
 ```
 # search space boundaries
 fiber_lb 0.05
@@ -78,7 +80,19 @@ total_mass 2800.0
 author Martin van der Schelling
 ```
 
-You can alter the configuration file and save it locally to quickly load up custom parameters
+You can alter the configuration file and save it locally to quickly load up custom parameters. A detailed description of the available parameters is found [here](#available-parameters).
+
+## Objective file
+
+Something about the objective file
+
+```
+density min 0.3
+stiffness max
+impact max 0.6
+flex. strength max 0.3
+E-modulus min
+```
 
 ## Available commands
 
