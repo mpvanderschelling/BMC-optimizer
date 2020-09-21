@@ -5,6 +5,7 @@ This program is designed in collaboration with NPSP B.V.
 ## Overview
 
 This python scripts first builds a Gaussian process surrogate model given the data provided. Subsequently, several new recipes are proposed within the search space boundaries.
+
 Contents of this readme:
 * [Files](#files)
 * [Getting started](#getting-started)
@@ -50,6 +51,8 @@ density | impact | stiffness | flex. strength | E-modulus |
 1.7187 | 2.1 | 9.7 | 28.8 | 4770 |
 1.4654| 2.3 | 9.5 | 32.1 | 5647 |
 ... | ... | ... | ... | ... |
+
+> Note: The composition of the matrix material should be the same over all the inputs
 
 ## Configuration file
 The `config.txt` file contains the parameters you want to use in the model <br>
