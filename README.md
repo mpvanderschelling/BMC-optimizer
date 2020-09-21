@@ -28,6 +28,8 @@ Each row contains a new sample.
 name | type fiber | type filler | fiber ratio | filler ratio | dry ratio | 
 --- | --- | --- | --- | --- | --- |
 FlaxOli50 | Flax | Olive stone | 0.0995 | 0.1542 | 0.6532 |
+ReedPeach50 | Reed | Peach stone | 0.0732 | 0.1375 | 0.5592 |
+... | ... | ... | ... | ... | ... |
 
 Other columns are selected as output columns
 
@@ -37,8 +39,8 @@ density | impact | stiffness | flex. strength | E-modulus |
 
 ## Configuration file
 The `config.txt` file contains the parameters you want to use in the model <br>
-For each line, specify the parameter, followed by a space and end with the value of that parameter
-For more information on the optimization model parameters, consult the [cikit-optimize documentation](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer).
+For each line, specify the parameter, followed by a space and end with the value of that parameter <br>
+For more information on the optimization model parameters, consult the [scikit-optimize documentation](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer).
 ```
 # search space boundaries
 fiber_lb 0.05
@@ -59,5 +61,6 @@ total_mass 2800.0
 author Martin van der Schelling
 ```
 
+You can alter the configuration file and save it locally to quickly load up custom parameters
 
 
