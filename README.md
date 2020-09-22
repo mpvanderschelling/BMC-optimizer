@@ -19,8 +19,9 @@ The files in this repository
 * <b>bmc_requirements.txt</b>: Pip requirements file. No need to change this.<br>
 * <b>config.txt</b>: Configuration file with model paramaters. Parameters are loaded up at the start of the program.<br>
 * <b>help.txt</b>: File for which the contents are displayed if you are executing `help` within the python program.<br>
-* <b>model.py</b>: The python model to execute.<br>
+* <b>input_fake.xlsx</b>: Artifically generated data used as a placeholder for the bio-based composite database.<br>
 * <b>objective.txt</b>: File that states the different objectives, their weights and if they are to be minimized or maximized
+* <b>model.py</b>: The python model to execute.<br>
 
 ## Getting started
 The following guidelines will help you get started with using the optimization model.
