@@ -1,4 +1,4 @@
-# BMC-optimizer
+# BMC-optimizer (v1.0)
 Simple Bayesian Optimization python program to suggest new bulk moulding compound recipes for bio-based composites.
 This program is designed in collaboration with NPSP B.V.
 
