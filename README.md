@@ -29,7 +29,7 @@ The following guidelines will help you get started with using the optimization m
 ### Linux command line
 <b>Step 1)</b> Clone the repository: `git clone https://github.com/mpvanderschelling/BMC-optimizer.git`<br>
 <b>Step 2)</b> Make sure you are using Python 3.6+ <br>
-<b>Step 3)</b> Install the required packages: `pip install -r requirements_bmc.txt` <br>
+<b>Step 3)</b> Install the required packages: `pip install -r bmc_requirements.txt` <br>
 > Alternatively, you can install the required packages yourself: `scikit-optimize, pandas, datetime, xlrd.`
 
 <b>Step 4)</b> Put a database excel file in the local folder <br>
@@ -43,7 +43,7 @@ You need to have [Anaconda](https://www.anaconda.com/products/individual#windows
 
 <b>Step 2)</b> Unzip the file somewhere locally. <br>
 <b>Step 3)</b> Open Anaconda Prompt and navigate to the folder where the downloaded files are stored: `cd <path>` <br>
-<b>Step 4)</b> Type `pip install -r requirements_bmc.txt` to install the required packages <br>
+<b>Step 4)</b> Type `pip install -r bmc_requirements.txt` to install the required packages <br>
 <b>Step 5)</b> Put a database excel file in the same folder <br>
 <b>Step 6)</b> Run the `model.py` python script: `python model.py`<br>
 
