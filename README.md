@@ -47,6 +47,8 @@ You need to have [Anaconda](https://www.anaconda.com/products/individual#windows
 <b>Step 5)</b> Put a database excel file in the same folder <br>
 <b>Step 6)</b> Run the `model.py` python script: `python model.py`<br>
 
+> If you exit the Anaconda terminal and want to run the model again, you have to navigate to the folder again within Anaconda Prompt with `cd <path>`
+
 ## Database file
 
 You have to provide your own database file. The database file consists of some necessary input paramaeter columns. Each row contains a new sample.
