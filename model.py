@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 """
+v1
+
 Created on Mon Jun 22 09:42:22 2020
-
 @author: Martin van der Schelling
+more info: https://github.com/mpvanderschelling/BMC-optimizer
 """
 
-#.......................................
+#........... import packages ..................
 
 
 #pip install -r bmc_requirements.txt
@@ -22,21 +25,20 @@ from os import system
 
 now = datetime.now()
 
-if __name__ == "__main__":
-    fiber_lb = 0.05
-    fiber_ub = 0.20
-    
-    filler_lb = 0.0
-    filler_ub = 1.0
-    
-    dry_lb = 0.40
-    dry_ub = 0.75
-    
-    acq_func = 'EI'
-    strategy = 'cl_min'
-    max_recipes = 6
-    total_mass = 2800.
-    author = 'Martin van der Schelling'
+# fiber_lb = 0.05
+# fiber_ub = 0.20
+
+# filler_lb = 0.0
+# filler_ub = 1.0
+
+# dry_lb = 0.40
+# dry_ub = 0.75
+
+# acq_func = 'EI'
+# strategy = 'cl_min'
+# max_recipes = 6
+# total_mass = 2800.
+# author = 'Martin van der Schelling'
 
 def converttype(value):
     try:
@@ -48,7 +50,7 @@ def converttype(value):
             return str(value)   
 
 
-#.......................................
+#..............Startup and import ................
 
 
 def startup():
@@ -101,9 +103,9 @@ def importobjective():
                 print('[OBJECTIVE]\t Load: %s' %line.replace('\n',''))
             
         
+#.............. Main module................
 
-
-def ask():
+def home():
     
     print("[HOME]\t Type '?' for a list of available commands")
     
@@ -144,8 +146,8 @@ def ask():
             
        
 
-#........... VIEW PARAMETERS .............
 
+#........... PRINT CONFIG .............
 
 def printconfig():
 
@@ -178,7 +180,7 @@ def printconfig():
         return
 
 
-   
+ #........... SHOW PARAMETERS .............  
     
 def show_query(query):
     if len(query.split()) == 1:
@@ -223,6 +225,8 @@ def show_query(query):
         
     else:
         print('[SHOW]\t %s is not a known parameter' %query.split()[1])
+
+#........... SET PARAMETERS .............
         
 def set_query(query):
     if query == 'set config':
@@ -544,7 +548,7 @@ def askmodel():
 
 
 
-#........... PRINT RECIPES ................
+#........... PRINT MODEL ................
 
 
 def printrecipes():
@@ -677,10 +681,13 @@ def printrecipes():
         print("[PRINT]\t Files saved as %s.csv" %filename)
 
 
-startup()
-importconfig()
-importobjective()
-ask()
+
+
+if __name__ == "__main__":
+    startup()
+    importconfig()
+    importobjective()
+    home()
 
 
 

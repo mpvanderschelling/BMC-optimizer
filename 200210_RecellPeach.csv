@@ -1,0 +1,45 @@
+,%,g,name
+Name,,,Recipe1
+PE,28.43,796,Polyester
+Trigonox,0.42,12,Trigonox
+Zinc,1.92,54,Zinc
+Nat. Filler,5.68,159,Peach stone
+Calcite,39.45,1105,Calcite
+Fiber,24.11,675,Recell
+Total,100.0,2800.0,
+ ,,,
+Fiber %,24.106878,,Recell
+NF %,12.577965,,Peach stone
+Dry %,69.230194,,
+   ,,,
+Name,,,Recipe2
+PE,49.41,1383,Polyester
+Trigonox,0.73,20,Trigonox
+Zinc,3.33,93,Zinc
+Nat. Filler,7.51,210,Peach stone
+Calcite,26.66,747,Calcite
+Fiber,12.36,346,Recell
+Total,100.0,2800.0,
+ ,,,
+Fiber %,12.358395,,Recell
+NF %,21.97828,,Peach stone
+Dry %,46.531877,,
+   ,,,
+Name,,,Recipe3
+PE,39.85,1116,Polyester
+Trigonox,0.59,16,Trigonox
+Zinc,2.68,75,Zinc
+Nat. Filler,47.63,1334,Peach stone
+Calcite,0.0,0,Calcite
+Fiber,9.25,259,Recell
+Total,100.0,2800.0,
+ ,,,
+Fiber %,9.249999,,Recell
+NF %,100.0,,Peach stone
+Dry %,56.879103,,
+   ,,,
+Stock C,,1852,Calcite
+Stock NF ,,1703,Peach stone
+Stock F,,1280,Recell
+Time,,"October 02, 2020 -- 10:24",
+Author,,Martin van der Schelling,
