@@ -117,6 +117,8 @@ E-modulus min
 ```
 > Currently, it is not possible to edit the objective values within the program. They have to be altered and saved in the `objective.txt` file before running the model.
 
+If output data is missing for specific recipes, the influence of that parameter will not be influencing the final score of the recipe.
+
 ## Available commands
 
 The commands are divided into 4 categories: 
