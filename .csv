@@ -1,0 +1,58 @@
+,%,g,name
+Name,,,Recipe1
+PE,51.51,1442,Polyester
+Trigonox,0.76,21,Trigonox
+Zinc,3.47,97,Zinc
+Nat. Filler,28.1,787,Olive stone
+Calcite,3.7,104,Calcite
+Fiber,12.45,349,Recell
+Total,100.0,2800.0,
+ ,,,
+Fiber %,12.45093,,Recell
+NF %,88.358086,,Olive stone
+Dry %,44.255,,
+   ,,,
+Name,,,Recipe2
+PE,52.31,1465,Polyester
+Trigonox,0.77,22,Trigonox
+Zinc,3.52,99,Zinc
+Nat. Filler,3.71,104,Olive stone
+Calcite,18.02,505,Calcite
+Fiber,21.67,607,Recell
+Total,100.0,2800.0,
+ ,,,
+Fiber %,21.66654,,Recell
+NF %,17.063731,,Olive stone
+Dry %,43.397846,,
+   ,,,
+Name,,,Recipe3
+PE,26.02,728,Polyester
+Trigonox,0.38,11,Trigonox
+Zinc,1.75,49,Zinc
+Nat. Filler,8.03,225,Olive stone
+Calcite,56.0,1568,Calcite
+Fiber,7.82,219,Recell
+Total,100.0,2800.0,
+ ,,,
+Fiber %,7.816891,,Recell
+NF %,12.53668,,Olive stone
+Dry %,71.845916,,
+   ,,,
+Name,,,Recipe4
+PE,51.86,1452,Polyester
+Trigonox,0.77,21,Trigonox
+Zinc,3.49,98,Zinc
+Nat. Filler,30.1,843,Olive stone
+Calcite,0.98,27,Calcite
+Fiber,12.8,358,Recell
+Total,100.0,2800.0,
+ ,,,
+Fiber %,12.79691,,Recell
+NF %,96.848265,,Olive stone
+Dry %,43.875691,,
+   ,,,
+Stock C,,2204,Calcite
+Stock NF ,,1959,Olive stone
+Stock F,,1533,Recell
+Time,,"September 25, 2020 -- 14:16",
+Author,,Martin van der Schelling,

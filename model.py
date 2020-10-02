@@ -434,24 +434,30 @@ def chooseoutput():
         for line in g:
             if line[0] != '#':
                 obj.append(line)
+                
+    #bias list
+    biaslist = [i.split()[-1] for i in obj]
+    biaslist = [1.0 if i in ['max','min'] else float(i) for i in biaslist ]
+    bias = pd.Series(biaslist,index=outputcolumns)
 
-    multi_obj = pd.Series(0,index=d.index)
-
+    mm = pd.DataFrame(np.nan, columns=outputcolumns, index=d.index)
+    
     for i in outputcolumns:
         for j in obj:
             if i in j:
                 obj_beh = j.replace(i,'').replace('\n','')[1:]
-                try:
-                    bias = converttype(obj_beh.split()[1])
-                except IndexError:
-                    bias = 1.0
                 sign = obj_beh.split()[0]
                 
                 if sign == 'min':
-                    multi_obj += ((d[i]-d[i].min())/(d[i].max()-d[i].min()))*bias
+                    mm[i] = ((d[i]-d[i].min())/(d[i].max()-d[i].min()))*bias[i]
+
                     
                 if sign == 'max':
-                    multi_obj += (abs(1-(d[i]-d[i].min())/(d[i].max()-d[i].min())))*bias
+                    mm[i] = (abs(1-(d[i]-d[i].min())/(d[i].max()-d[i].min())))*bias[i]
+
+    cumbias = pd.DataFrame([ [ bias.iloc[i]*mm.notna().iloc[j][i] for i in range(len(mm.iloc[0]))] for j in range(len(mm)) ],index=d.index).sum(axis=1)
+    multi_obj = mm.sum(axis=1).divide(cumbias)
+    
     
     print('[SET OUTPUT]\t Made single-objective output by rules of objective.txt')
     output = multi_obj
