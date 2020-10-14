@@ -120,8 +120,8 @@ You need to have a Python interpreter installed like [Anaconda](https://www.anac
 <b>Step 4)</b> Install the required packages: `pip install -r bmc_requirements.txt` <br>
 > Alternatively, you can install the required packages yourself: `scikit-optimize, pandas, datetime, xlrd.`
 
-<b>Step 4)</b> Put a database excel file in the `/files/` folder <br>
-<b>Step 5)</b> Open, edit and run the model `/Python/model.py` in any python interpreter
+<b>Step 5)</b> Put a database excel file in the `/files/` folder <br>
+<b>Step 6)</b> Open, edit and run the model `/Python/model.py` in any python interpreter
 
 ## Available commands
 
