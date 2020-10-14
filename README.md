@@ -31,14 +31,14 @@ The following guidelines will help you get started with using the optimization m
 
 <b>Step 1)</b> Clone the repository: `git clone https://github.com/mpvanderschelling/BMC-optimizer.git`<br>
 <b>Step 2)</b> Put a database excel file in the `/files/` folder <br>
-<b>Step 3)</b> Navigate to the `/Linux/` folder
+<b>Step 3)</b> Navigate to the `/Linux/` folder<br>
 <b>Step 4)</b> Run the model by executing `./model`
 
 ### Edit the sourcecode (Linux) 
 
 <b>Step 1)</b> Clone the repository: `git clone https://github.com/mpvanderschelling/BMC-optimizer.git`<br>
 <b>Step 2)</b> Make sure you are using Python 3.6+ <br>
-<b>Step 3)</b> Navigate to the `/Python/` folder
+<b>Step 3)</b> Navigate to the `/Python/` folder <br>
 <b>Step 4)</b> Install the required packages: `pip install -r bmc_requirements.txt` <br>
 > Alternatively, you can install the required packages yourself: `scikit-optimize, pandas, datetime, xlrd.`
 
