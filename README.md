@@ -12,6 +12,7 @@ Contents of this readme:
 * [Database file](#database-file)
 * [Configuration file](#configuration-file)
 * [Objective file](#objective-file)
+* [Edit the sourcecode](#edit-the-sourcecode)
 * [Available commands](#available-commands)
 * [Available parameters](#available-parameters)
 
@@ -27,37 +28,18 @@ The files in this repository
 The following guidelines will help you get started with using the optimization model.
 
 ### Linux command line
-
-
 <b>Step 1)</b> Clone the repository: `git clone https://github.com/mpvanderschelling/BMC-optimizer.git`<br>
 <b>Step 2)</b> Put a database excel file in the `/files/` folder <br>
-<b>Step 3)</b> Navigate to the `/Linux/` folder<br>
+<b>Step 3)</b> Navigate to the `/Linux/` folder within the repository: `cd <path of forked repository>/Linux`<br>
 <b>Step 4)</b> Run the model by executing `./model`
 
-### Edit the sourcecode (Linux) 
-
-<b>Step 1)</b> Clone the repository: `git clone https://github.com/mpvanderschelling/BMC-optimizer.git`<br>
-<b>Step 2)</b> Make sure you are using Python 3.6+ <br>
-<b>Step 3)</b> Navigate to the `/Python/` folder <br>
-<b>Step 4)</b> Install the required packages: `pip install -r bmc_requirements.txt` <br>
-> Alternatively, you can install the required packages yourself: `scikit-optimize, pandas, datetime, xlrd.`
-
-<b>Step 4)</b> Put a database excel file in the `/files/` folder <br>
-<b>Step 5)</b> Open, edit and run the model `/Python/model.py` in any python interpreter
-
 ### Windows
-You need to have [Anaconda](https://www.anaconda.com/products/individual#windows) installed for this method.
-
 <b>Step 1)</b> Download the repository as `.zip` file. <br>
 > Click the green 'Code' button at the top of the window and then 'Download ZIP'
 
 <b>Step 2)</b> Unzip the file somewhere locally. <br>
-<b>Step 3)</b> Open Anaconda Prompt and navigate to the folder where the downloaded files are stored: `cd <path>` <br>
-<b>Step 4)</b> Type `pip install -r bmc_requirements.txt` to install the required packages <br>
-<b>Step 5)</b> Put a database excel file in the same folder <br>
-<b>Step 6)</b> Run the `model.py` python script: `python model.py`<br>
-
-> If you exit the Anaconda terminal and want to run the model again, you have to navigate to the folder again within Anaconda Prompt with `cd <path>`
+<b>Step 3)</b> Put a database excel file in the `/files/` folder <br>
+<b>Step 4)</b> Run the model by double-clicking `model_windows.exe` 
 
 ## Database file
 
@@ -128,6 +110,18 @@ E-modulus min
 > Currently, it is not possible to edit the objective values within the program. They have to be altered and saved in the `objective.txt` file before running the model.
 
 If output data is missing for specific recipes, the influence of that parameter will not be influencing the final score of the recipe.
+
+## Edit the sourcecode
+You need to have a Python interpreter installed like [Anaconda](https://www.anaconda.com/products/individual#windows) for this method.
+
+<b>Step 1)</b> Clone the repository: `git clone https://github.com/mpvanderschelling/BMC-optimizer.git`<br>
+<b>Step 2)</b> Make sure you are using Python 3.6+ <br>
+<b>Step 3)</b> Navigate to the `/Python/` folder <br>
+<b>Step 4)</b> Install the required packages: `pip install -r bmc_requirements.txt` <br>
+> Alternatively, you can install the required packages yourself: `scikit-optimize, pandas, datetime, xlrd.`
+
+<b>Step 5)</b> Put a database excel file in the `/files/` folder <br>
+<b>Step 6)</b> Open, edit and run the model `/Python/model.py` in any python interpreter
 
 ## Available commands
 
