@@ -1,2 +1,2 @@
 *.csv#
-recipes/*.csv
+recipes/**/*.csv
