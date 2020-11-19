@@ -23,6 +23,7 @@ The files in this repository
 * <b>input_fake.xlsx</b>: Artifically generated data used as a placeholder for the bio-based composite database.<br>
 * <b>objective.txt</b>: File that states the different objectives, their weights and if they are to be minimized or maximized
 * <b>model.py</b>: The python model to execute.<br>
+* <b>calculator_for_model.xlsx</b>: Excel tool that converts mass-based recipes to the 3 parameter-based format and back.<br>
 
 ## Getting started
 The following guidelines will help you get started with using the optimization model.
@@ -154,6 +155,7 @@ The commands are divided into 4 categories:
 **PRINT**<br>
 `print config`		 save the altered config parameters to the config.txt file<br>
 `print model`		 print the suggested recipes to a `.csv` file<br>
+`print scores`   print the penalty scores for each output column per row to a `.csv` file<br>
 
 **MISC**<br>
 `help/?`			 show the available commands<br>
@@ -182,7 +184,8 @@ name	|	type	|	description
 `filler_t`	|string	|	Name of the natural filler to investigate
 `max_recipes`	|int	|	Maximum number of recipes to request
 `now`		|datetime|	Current time at start of program
-`output` |Series| Calculated penalty score of each selected entry in the database
+`output` |Series| Calculated total penalty score of each selected entry in the database
+`scores` |DataFrame| Calculated penalty score for each individual output of each selected entry in the database
 `strategy`	|str|		Parallel Bayesian Optimization strategy. [More info](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer)
 `total_mass`	|float|		Total mass of each BMC dough
 
