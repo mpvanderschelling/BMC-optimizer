@@ -183,7 +183,8 @@ name	|	type	|	description
 `filler_t`	|string	|	Name of the natural filler to investigate
 `max_recipes`	|int	|	Maximum number of recipes to request
 `now`		|datetime|	Current time at start of program
-`output` |Series| Calculated penalty score of each selected entry in the database
+`output` |Series| Calculated total penalty score of each selected entry in the database
+`scores` |DataFrame| Calculated penalty score for each individual output of each selected entry in the database
 `strategy`	|str|		Parallel Bayesian Optimization strategy. [More info](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer)
 `total_mass`	|float|		Total mass of each BMC dough
 
