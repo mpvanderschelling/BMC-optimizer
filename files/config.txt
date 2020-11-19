@@ -14,4 +14,7 @@ strategy cl_min
 max_recipes 6
 total_mass 2800.0
 
+# Score parameters
+badplatepenalty 2.0
+
 author Martin van der Schelling

@@ -471,6 +471,11 @@ def chooseoutput():
     for i in ['type fiber','type filler','fiber ratio','filler ratio','dry ratio','glycerol']:
         outputcolumns.remove(i)
     
+    try:
+        outputcolumns.remove('testable?')
+    except ValueError:
+        pass
+    
     global fx
     global output
     global scores
@@ -500,7 +505,13 @@ def chooseoutput():
                     
                 if sign == 'max':
                     mm[i] = (abs(1-(d[i]-d[i].min())/(d[i].max()-d[i].min())))*bias[i]
-
+                    
+    if 'testable?' in list(data.columns):
+        for i in list(mm.index):
+            if d['testable?'][i] == 'no':
+                mm.loc[i] = pd.Series((badplatepenalty*sum(bias))/len(outputcolumns), index=mm.columns) #huge penalty value
+        
+                    
     cumbias = pd.DataFrame([ [ bias.iloc[i]*mm.notna().iloc[j][i] for i in range(len(mm.iloc[0]))] for j in range(len(mm)) ],index=d.index).sum(axis=1)
     multi_obj = mm.sum(axis=1).divide(cumbias)
     
@@ -512,6 +523,7 @@ def chooseoutput():
         print('[SET OUTPUT]\t %s \t %s' %(output.index[i],output[i]) )
 
     scores = mm.div(cumbias,axis=0) #fillna()
+    scores['testable?'] = d['testable?']
     scores['total scores'] = scores.sum(axis=1)
     fx = multi_obj.to_numpy().tolist()
 
