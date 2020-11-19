@@ -1,5 +1,5 @@
 # BMC-optimizer (v1.0)
-Simple Bayesian Optimization python program to suggest new bulk moulding compound recipes for bio-based composites.
+Bayesian Optimization python program to suggest new bulk moulding compound recipes for bio-based composites.
 This program is designed in collaboration with NPSP B.V.
 
 ## Overview
@@ -61,7 +61,7 @@ density | impact | stiffness | flex. strength | E-modulus |
 1.4654| 2.3 | 9.5 | 32.1 | 5647 |
 ... | ... | ... | ... | ... |
 
-> Note: The composition of the matrix material is hard-coded and should be the same over all the inputs.
+> Note: The composition of the premix is hard-coded and should be the same over all the inputs.
 
 ## Configuration file
 The `config.txt` file contains the parameters you want to use in the model. For each line, specify the parameter, followed by a space and end with the value of that parameter. Lines proceding a `#` act as comments and will not be imported. <br>
