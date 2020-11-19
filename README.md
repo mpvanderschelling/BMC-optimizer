@@ -155,6 +155,7 @@ The commands are divided into 4 categories:
 **PRINT**<br>
 `print config`		 save the altered config parameters to the config.txt file<br>
 `print model`		 print the suggested recipes to a `.csv` file<br>
+`print scores`   print the penalty scores for each output column per row to a `.csv` file<br>
 
 **MISC**<br>
 `help/?`			 show the available commands<br>
