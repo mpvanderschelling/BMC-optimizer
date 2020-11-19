@@ -150,6 +150,9 @@ def home():
         elif query == 'print model':
             printrecipes()
             
+        elif query == 'print scores':
+            printscores()
+            
         elif query == 'print config':
             printconfig()
         else:
@@ -191,6 +194,32 @@ def printconfig():
     else:
         return
 
+#........... PRINT SCORES .............
+
+def printscores():
+    if 'scores' not in globals():
+        chooseoutput()
+        if 'scores' not in globals():
+            return
+        
+    print("[PRINT]\t Do you want to save the scores?")
+    while True:
+       ans = str(input("* Answer [y/n]: "))
+       if ans not in ['y','n']:
+            print("Please enter y or n")
+       else:
+           break
+    
+        
+    if ans == 'y':
+        while True:
+            filename = str(input("[PRINT]\t Enter filename to save to (exclude type): "))
+            break
+        
+        #OUTPUT TO CSV
+        filename = filename + '.csv'
+        scores.to_csv(parentdirpath(filename,folder='recipes'))
+        print("[PRINT]\t Files saved as %s in the recipes folder" %filename) 
 
  #........... SHOW PARAMETERS .............  
     
@@ -444,6 +473,7 @@ def chooseoutput():
     
     global fx
     global output
+    global scores
     obj = []
     
     with open(parentdirpath('objective.txt')) as g:
@@ -481,6 +511,8 @@ def chooseoutput():
     for i in range(len(output)):
         print('[SET OUTPUT]\t %s \t %s' %(output.index[i],output[i]) )
 
+    scores = mm.div(cumbias,axis=0) #fillna()
+    scores['total scores'] = scores.sum(axis=1)
     fx = multi_obj.to_numpy().tolist()
 
 

@@ -1,4 +1,4 @@
-density min 0.3
+density min 2
 stiffness max
 impact max 0.6
 flex. Strength max 0.3
