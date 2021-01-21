@@ -1,4 +1,4 @@
-# BMC-optimizer (v1.0)
+# BMC-optimizer (v1.1)
 Bayesian Optimization python program to suggest new bulk moulding compound recipes for bio-based composites.
 This program is designed in collaboration with NPSP B.V.
 
@@ -56,11 +56,13 @@ ReedPeach50 | Reed | Peach stone | 0.0732 | 0.1375 | 0.5592 |
 
 Other columns are selected as output columns
 
-density | impact | stiffness | flex. strength | E-modulus |
---- | --- | --- | --- | --- |
-1.7187 | 2.1 | 9.7 | 28.8 | 4770 |
-1.4654| 2.3 | 9.5 | 32.1 | 5647 |
-... | ... | ... | ... | ... |
+testable? | density | impact | stiffness | flex. strength | E-modulus |
+--- | --- | --- | --- | --- | --- |
+yes | 1.7187 | 2.1 | 9.7 | 28.8 | 4770 |
+yes | 1.4654| 2.3 | 9.5 | 32.1 | 5647 |
+... | ... | ... | ... | ... | ... |
+
+(v1.1) The `testable?` column is optional; if a plate has failed and is not up for testing, the output columns can be left blank and the `testable?` cell is filled with the value `no`. Subsequently, a huge penalty is given to the total score of the plate, making it unlikely that the model will explore in that region. The value of the huge penalty can be set with the `badplatepenalty` parameter. 
 
 > Note: The composition of the premix is hard-coded and should be the same over all the inputs.
 
@@ -84,6 +86,9 @@ strategy cl_min
 # Recipe parameters
 max_recipes 6
 total_mass 2800.0
+
+# Score parameters
+badplatepenalty 2.0
 
 author Martin van der Schelling
 ```
@@ -170,6 +175,7 @@ name	|	type	|	description
 ---|---|---
 `acq_func`	|string	|	Type of acquisition function used. [More info](https://scikit-optimize.github.io/stable/modules/generated/skopt.Optimizer.html?highlight=optimizer#skopt.Optimizer)
 `author`		|string|		Name that will be printed on the recipes
+`badplatepenalty`     | float |     Penalty that is given to plates that cannot be tested (>= 1.0)
 `batch`     | int |     Number of recipes to be generated
 `config`		|list|		Copy of the imported config.txt file
 `data`		|DataFrame|	Imported BMC database
