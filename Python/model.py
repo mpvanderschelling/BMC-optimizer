@@ -467,14 +467,14 @@ def chooseoutput():
     
     # outputcolumns = list(data.columns)[-5:] 
     
-    outputcolumns = list(data.columns)
-    for i in ['type fiber','type filler','fiber ratio','filler ratio','dry ratio','glycerol']:
-        outputcolumns.remove(i)
+    # outputcolumns = list(data.columns)
+    # for i in ['type fiber','type filler','fiber ratio','filler ratio','dry ratio','glycerol']:
+    #     outputcolumns.remove(i)
     
-    try:
-        outputcolumns.remove('testable?')
-    except ValueError:
-        pass
+    # try:
+    #     outputcolumns.remove('testable?')
+    # except ValueError:
+    #     pass
     
     global fx
     global output
@@ -485,7 +485,9 @@ def chooseoutput():
         for line in g:
             if line[0] != '#':
                 obj.append(line)
-                
+    
+    outputcolumns = [i for i in list(data.columns) if i in ' '.join(obj)]            
+    
     #bias list
     biaslist = [i.split()[-1] for i in obj]
     biaslist = [1.0 if i in ['max','min'] else float(i) for i in biaslist ]
