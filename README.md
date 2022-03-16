@@ -56,7 +56,7 @@ ReedPeach50 | Reed | Peach stone | 0.0732 | 0.1375 | 0.5592 |
 
 Other columns are selected as output columns
 
-testable? | density | impact | stiffness | flex. strength | E-modulus |
+testable? | density | impact | stiffness | flex. strength | stiffness |
 --- | --- | --- | --- | --- | --- |
 yes | 1.7187 | 2.1 | 9.7 | 28.8 | 4770 |
 yes | 1.4654| 2.3 | 9.5 | 32.1 | 5647 |
@@ -111,7 +111,6 @@ density min 0.3
 stiffness max
 impact max 0.6
 flex. strength max 0.3
-E-modulus min
 ```
 > Currently, it is not possible to edit the objective values within the program. They have to be altered and saved in the `objective.txt` file before running the model.
 
